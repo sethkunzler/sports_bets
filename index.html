@@ -19,54 +19,60 @@
     TODO I want a buy player function 
     TODO don't get stuck on css for three or four hours
   -->
-  <header class="d-flex mt-3">
+  <header class="d-flex mt-3 align-items-end">
     <!-- TODO bottom red border, and an actual image -->
-    <img src="assets/images/" alt="Logo">Logo goes here 
+    <img class="p-3" src="assets/images/" alt="Logo">
     <h5>
-      EXTREMELY realistic Sports Bets
+      EXTREMELY Realistic Sports Bets
     </h5>
   </header>
   <hr>
-  <main class="mt-5">
-    <h3>Bank</h3>
-    <p>
-      $<span id="bankDisplay">100</span>
-    </p>
-    <section class="container">
-      <div class="row">
-        <div class="col-6">
-          <h1>
-            Team 2
-          </h1>
-          <p id="teamLineup"></p>
-          <button type="button" class="btn btn-outline-info fs-3">Bet 5</button>
-          <button type="button" class="btn btn-outline-info fs-3">Bet 25</button>
-          <button type="button" class="btn btn-outline-info fs-3">Bet 100</button>
-          <button type="button" class="btn btn-outline-info fs-3">BET IT ALL!</button>
-        </div>
-        <div class="col-6">
-          <h1>
-            Team 2
-          </h1>
-          <p id="teamLineup"></p>
-          <button type="button" class="btn btn-outline-info fs-3">Bet 5</button>
-          <button type="button" class="btn btn-outline-info fs-3">Bet 25</button>
-          <button type="button" class="btn btn-outline-info fs-3">Bet 100</button>
-          <button type="button" class="btn btn-outline-info fs-3">BET IT ALL!</button>
+  <main class="mt-5 ">
+    <section class="container justify-content-center">
+      <div class="row text-center">
+        <div class="col-12">
+          <h3>Bank</h3>
+          <p class="fs-4">
+            $<span id="bankDisplay">100</span>
+          </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
+      <div class="row text-center">
+        <div class="col-md-6 my-3">
+          <h1>
+            Team 2
+          </h1>
+          <p id="team1Lineup"></p>
+          <button type="button" onclick="team1bet(5)" class="btn btn-outline-info mt-3 fs-3">Bet 5</button>
+          <button type="button" onclick="team1bet(25)" class="btn btn-outline-info mt-3 fs-3">Bet 25</button>
+          <button type="button" onclick="team1bet(100)" class="btn btn-outline-info mt-3 fs-3">Bet 100</button>
+          <button type="button" onclick="team1bet('ALL')" class="btn btn-outline-info mt-3 fs-3">BET IT ALL!</button>
+        </div>
+        <div class="col-md-6 my-3">
+          <h1>
+            Team 2
+          </h1>
+          <p id="team2Lineup"></p>
+          <button type="button" onclick="team2bet(5)" class="btn btn-outline-info mt-3 fs-3">Bet 5</button>
+          <button type="button" onclick="team2bet(25)" class="btn btn-outline-info mt-3 fs-3">Bet 25</button>
+          <button type="button" onclick="team2bet(100)" class="btn btn-outline-info mt-3 fs-3">Bet 100</button>
+          <button type="button" onclick="team2bet('ALL')" class="btn btn-outline-info mt-3 fs-3">BET IT ALL!</button>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
           <h2>
             Bet Pool:
           </h2>
           <p class="fs-3">$<span id="betDisplay">0</span></p>
+          <button type="button" onclick="placeBet()" class="btn btn-outline-success">Place Bet!</button>
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-          <span id="resultDisplay">
-          </span>
+        <div class="col-12 d-flex justify-content-center">
+          <p class="fs-4">
+            <span id="resultDisplay">Result of the Match and your bet down here!</span>
+          </p>
         </div>
       </div>
     </section>

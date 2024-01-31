@@ -1,5 +1,5 @@
 // NOTE #region Game Code and Meta Data
-let bank = 100
+let bank = 1000
 
 const players = [
   {
@@ -136,3 +136,26 @@ const players = [
 // TODO I need a good/bad bet display
 // TODO I want a buy player function
 
+const bankDisplayElem = document.getElementById('bankDisplay')
+const team1LineupElem = document.getElementById('team1Lineup')
+const team2LineupElem = document.getElementById('team2Lineup')
+const betDisplayElem = document.getElementById('betDisplay')
+const resultDisplayElem = document.getElementById('resultDisplay')
+
+function team1bet(betAmount) {}
+function team2bet(betAmount) {}
+function placeBet() {}
+
+function drawBankDisplay() {
+  bankDisplayElem.innerText = bank
+}
+function drawTeam1Lineup() {}
+function drawTeam2Lineup() {}
+function drawBetDisplay() {}
+function drawResultDisplay() {}
+
+drawBankDisplay()
+drawTeam1Lineup()
+drawTeam2Lineup()
+drawBetDisplay()
+drawResultDisplay()
