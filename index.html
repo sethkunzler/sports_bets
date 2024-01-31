@@ -19,14 +19,57 @@
     TODO I want a buy player function 
     TODO don't get stuck on css for three or four hours
   -->
-  <header>
+  <header class="d-flex mt-3">
     <!-- TODO bottom red border, and an actual image -->
     <img src="assets/images/" alt="Logo">Logo goes here 
     <h5>
       EXTREMELY realistic Sports Bets
     </h5>
   </header>
-  
+  <main class="mt-5">
+    <h3>Bank</h3>
+    <p>
+      $<span id="bankDisplay">100</span>
+    </p>
+    <section class="container">
+      <div class="row">
+        <div class="col-6">
+          <h1>
+            Team 2
+          </h1>
+          <p id="teamLineup"></p>
+          <button type="button" class="btn btn-outline-info fs-3">Bet 5</button>
+          <button type="button" class="btn btn-outline-info fs-3">Bet 25</button>
+          <button type="button" class="btn btn-outline-info fs-3">Bet 100</button>
+          <button type="button" class="btn btn-outline-info fs-3">BET IT ALL!</button>
+        </div>
+        <div class="col-6">
+          <h1>
+            Team 2
+          </h1>
+          <p id="teamLineup"></p>
+          <button type="button" class="btn btn-outline-info fs-3">Bet 5</button>
+          <button type="button" class="btn btn-outline-info fs-3">Bet 25</button>
+          <button type="button" class="btn btn-outline-info fs-3">Bet 100</button>
+          <button type="button" class="btn btn-outline-info fs-3">BET IT ALL!</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>
+            Bet Pool:
+          </h2>
+          <p class="fs-3">$<span id="betDisplay">0</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span id="resultDisplay">
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
