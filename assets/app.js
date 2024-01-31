@@ -141,6 +141,8 @@ const team1LineupElem = document.getElementById('team1Lineup')
 const team2LineupElem = document.getElementById('team2Lineup')
 const betDisplayElem = document.getElementById('betDisplay')
 const resultDisplayElem = document.getElementById('resultDisplay')
+const team1 = players.filter(player => player.teamNumber == 1)
+const team2 = players.filter(player => player.teamNumber == 2)
 
 function team1bet(betAmount) {}
 function team2bet(betAmount) {}
@@ -149,13 +151,20 @@ function placeBet() {}
 function drawBankDisplay() {
   bankDisplayElem.innerText = bank
 }
+function newLineup() {
+  const randomTeamNumber = Math.ceil(Math.random() * 2)
+  console.log(randomTeamNumber)
+
+  drawTeam1Lineup()
+  drawTeam2Lineup()
+}
+
 function drawTeam1Lineup() {}
 function drawTeam2Lineup() {}
 function drawBetDisplay() {}
 function drawResultDisplay() {}
 
 drawBankDisplay()
-drawTeam1Lineup()
-drawTeam2Lineup()
+newLineup()
 drawBetDisplay()
 drawResultDisplay()
