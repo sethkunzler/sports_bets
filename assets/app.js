@@ -1,5 +1,5 @@
 // NOTE #region Game Code and Meta Data
-let bank = 1000
+let bank = 500
 
 const players = [
   {
@@ -125,44 +125,98 @@ const players = [
 ]
 // #endregion
 
-// TODO Manipulate the DOM using draw functions
-// TODO Managing complex data stored in arrays
 // TODO Perform various checks and rules using comparisons
-// TODO Using array methods such as find, filter, forEach
-// TODO Assigning values using a random number using the Math.random() method
-// TODO I Need a main with a hero bank section
-// TODO I need two columns with teams and their buttons
 // TODO I need a total bet display bellow
 // TODO I need a good/bad bet display
 // TODO I want a buy player function
 
+// NOTE
+// #region elements by ID
 const bankDisplayElem = document.getElementById('bankDisplay')
 const team1LineupElem = document.getElementById('team1Lineup')
 const team2LineupElem = document.getElementById('team2Lineup')
 const betDisplayElem = document.getElementById('betDisplay')
 const resultDisplayElem = document.getElementById('resultDisplay')
-const team1 = players.filter(player => player.teamNumber == 1)
-const team2 = players.filter(player => player.teamNumber == 2)
+// #endregion
 
+// #region variables 
+// #endregion
+
+// #region functions that I haven't used
 function team1bet(betAmount) {}
 function team2bet(betAmount) {}
 function placeBet() {}
+// #endregion
+
+function valueChecker() {
+  let team1skill = 0
+  let team2skill = 0 
+  players.forEach(player => {
+    if(player.teamNumber == 1) {
+      team1skill += player.skill
+    } else {
+      team2skill += player.skill
+    }
+  })
+  console.log(`T1: ${team1skill} T2:${team2skill}`)
+  if(team1skill > team2skill) return(console.log("Team 1 Wins"))
+  return(console.log("Team 2 Wins"))
+}
 
 function drawBankDisplay() {
   bankDisplayElem.innerText = bank
 }
 function newLineup() {
-  const randomTeamNumber = Math.ceil(Math.random() * 2)
-  console.log(randomTeamNumber)
-
+  
+  players.forEach(player => {
+    const randomTeamNumber = Math.ceil(Math.random() * 2)
+    player.teamNumber = randomTeamNumber
+  })
   drawTeam1Lineup()
   drawTeam2Lineup()
+  valueChecker()
 }
 
-function drawTeam1Lineup() {}
-function drawTeam2Lineup() {}
+// function withOutTeamLineup() {
+//   const withOutTeam = players.filter(player => !player.teamNumber)
+//   console.log(`players with out a team: ${withOutTeam}`)
+// }
+
+function drawTeam1Lineup() {
+  const team1 = players.filter(player => player.teamNumber == 1)
+  console.log("Team 1:", team1)
+
+  let team1emojis = ""
+  let team1skill = 0
+  team1.forEach(player => {
+    team1emojis += player.emoji
+    team1skill += player.skill
+  })
+  console.log(team1emojis)
+  console.log("Team 1 skill:", team1skill)
+  team1LineupElem.innerText = team1emojis
+
+}
+function drawTeam2Lineup() {
+  const team2 = players.filter(player => player.teamNumber == 2)
+  console.log("Team 2:", team2)
+
+  let team2emojis = ""
+  let team2skill = 0
+  team2.forEach(player => {
+    team2emojis += player.emoji
+    team2skill += player.skill
+  })
+  console.log(team2emojis)
+  console.log("Team 2 skill:", team2skill)
+  team2LineupElem.innerText = team2emojis
+}
+
+// NOTE 
+// #region empty functions
 function drawBetDisplay() {}
 function drawResultDisplay() {}
+// #endregion
 
 drawBankDisplay()
 newLineup()
